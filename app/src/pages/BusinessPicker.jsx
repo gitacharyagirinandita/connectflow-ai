@@ -13,7 +13,7 @@ export default function BusinessPicker({ session }) {
 
   useEffect(() => {
     (async () => {
-      // First signed-in person becomes the owner of both workspaces. Nobody else can claim them later.
+      // First signed-in person becomes owner; everyone who signs up after that joins as a member.
       const { data: claim, error: claimErr } = await supabase.rpc('cf_claim_workspaces')
       if (claimErr) { setError(claimErr); return }
       setStatus(claim)

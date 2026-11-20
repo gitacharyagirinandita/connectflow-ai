@@ -8,11 +8,10 @@ Your lead management and growth assistant for **Health Coaching** and **Ratnagir
 
 1. Open the folder `Documents\ConnectFlow-AI`.
 2. Double-click **`ConnectFlow-AI.html`**. It opens in Chrome or Edge.
-3. Click **"First time? Create account"** and sign up with your email and a password.
-4. Check your email for the Supabase confirmation link and click it.
-   - It may open a page that says "can't be reached". That's fine 🙂 Your email is already confirmed.
-5. Go back to `ConnectFlow-AI.html` and **Sign in**.
-6. **Important:** the first person to sign in becomes the owner of both businesses. After that, nobody else can get in unless you give them access. So please sign in yourself first. 🙏
+3. Tap **"Create account & join"**, enter your email and a password. You go straight in. No email confirmation needed.
+4. The first person to sign up becomes the **owner**. Everyone who signs up after that joins both workspaces as a **member** and can see all leads.
+
+📱 **Mobile link:** https://gitacharyagirinandita.github.io/connectflow-ai/
 
 ---
 
