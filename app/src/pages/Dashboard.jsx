@@ -40,7 +40,8 @@ export default function Dashboard() {
   if (error) return <ErrorBox error={error} />
   if (!stats) return <Spinner />
 
-  const max = Math.max(1, ...stats.weekly.flatMap((d) => [d.leads, d.messages, d.replies, d.calls]))
+  const weekly = stats.weekly || []
+  const max = Math.max(1, ...weekly.flatMap((d) => [d.leads, d.messages, d.replies, d.calls]))
   const today = todayISO()
 
   return (
@@ -57,7 +58,7 @@ export default function Dashboard() {
               <span className="text-xs font-medium text-slate-500">{label}</span>
               <Icon className={`h-4 w-4 ${theme.text}`} />
             </div>
-            <div className="mt-2 text-2xl font-bold text-slate-900">{stats[k]}</div>
+            <div className="mt-2 text-2xl font-bold text-slate-900">{stats[k] ?? 0}</div>
           </div>
         ))}
       </div>
@@ -71,7 +72,7 @@ export default function Dashboard() {
             ))}
           </div>
           <div className="flex h-40 items-end gap-2">
-            {stats.weekly.map((d) => (
+            {weekly.map((d) => (
               <div key={d.day} className="flex flex-1 flex-col items-center gap-1">
                 <div className="flex h-32 w-full items-end justify-center gap-0.5">
                   {[['leads', 'bg-indigo-500'], ['messages', 'bg-green-500'], ['replies', 'bg-blue-400'], ['calls', 'bg-amber-500']].map(([k, c]) => (

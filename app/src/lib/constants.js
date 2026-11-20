@@ -42,7 +42,7 @@ export const INTEREST = { high: 'High', medium: 'Medium', low: 'Low', none: 'Non
 export const fmtDate = (d) => (d ? new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '—')
 export const fmtDateTime = (d) =>
   d ? new Date(d).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) : '—'
-export const leadName = (l) => l?.name || l?.phone || 'Unnamed lead'
+export const leadName = (l) => l?.name || l?.phone || (l?.requirement ? l.requirement.slice(0, 45) + (l.requirement.length > 45 ? '…' : '') : 'Unnamed lead')
 
 // Normalise Indian phone numbers to +91XXXXXXXXXX where possible
 export function normalisePhone(raw) {

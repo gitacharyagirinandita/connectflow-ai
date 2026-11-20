@@ -5,10 +5,10 @@ import { Button, ErrorBox, Field, Modal, useToast } from './ui'
 
 const EMPTY = { name: '', phone: '', email: '', location: '', category: '', requirement: '', source: 'Manual entry', source_link: '', lead_status: 'new', message_status: 'not_sent', notes: '' }
 
-export default function LeadForm({ open, onClose, business, lead, onSaved }) {
+export default function LeadForm({ open, onClose, business, lead, initial, onSaved }) {
   const toast = useToast()
   const editing = !!lead
-  const [form, setForm] = useState(() => (lead ? { ...EMPTY, ...lead } : EMPTY))
+  const [form, setForm] = useState(() => (lead ? { ...EMPTY, ...lead } : { ...EMPTY, ...(initial || {}) }))
   const [perm, setPerm] = useState({ status: 'unknown', method: '' })
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState(null)
@@ -16,7 +16,7 @@ export default function LeadForm({ open, onClose, business, lead, onSaved }) {
 
   async function save(e) {
     e.preventDefault()
-    if (!form.name.trim() && !form.phone.trim()) { setError('Please enter at least a name or a phone number.'); return }
+    if (!form.name.trim() && !form.phone.trim() && !(form.source_link || '').trim()) { setError('Please enter at least a name or a phone number.'); return }
     if (perm.status === 'opted_in' && !perm.method.trim()) { setError('Please write how this person gave permission (for example: "Filled our enquiry form").'); return }
     setSaving(true); setError(null)
     const payload = {

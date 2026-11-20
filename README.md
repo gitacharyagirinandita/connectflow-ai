@@ -26,7 +26,7 @@ Your lead management and growth assistant for **Health Coaching** and **Ratnagir
 | Bulk actions | Select leads, "Select all eligible" (opted-in only), add many leads to a list |
 | My Lists | Create, rename, delete lists. Add or remove leads. Search inside a list. Deleting a list never deletes leads |
 | Call History | Add as many call records as you like. Old records can never be changed. A follow-up date creates a reminder automatically |
-| Search Leads | Clearly shows "not configured". It never shows fake leads |
+| Search Leads | Live web search (Brave, India) through your n8n. Filters for location, category, age group, requirement, source, enquiry type and date. Save any result as a lead |
 
 ## ⏳ Coming next
 
@@ -35,7 +35,7 @@ Your lead management and growth assistant for **Health Coaching** and **Ratnagir
 | 2 | Business Settings (programs, verified fees, FAQs) + AI Message Studio |
 | 3 | WhatsApp Business Cloud API: sending, delivery ticks, replies, opt-out, Messaged Leads |
 | 4 | 7-Day Growth Planner |
-| 5 | Lead search through authorised sources + integration setup page |
+| 5 | More lead sources + integration setup page |
 
 ---
 
